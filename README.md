@@ -247,13 +247,6 @@ FRONTEND_URL=https://your-app.up.railway.app
 - Order calculation utilities
 - Database seeding scripts
 
-## 💼 Admin Credentials
-
-**Email**: admin@email.com  
-**Password**: 123456
-
-*Change these in production!*
-
 ## 👤 Author
 
 **Shaikh Radwan Ahmed Ratul**
@@ -304,8 +297,6 @@ npm run data:destroy
 - **Port**: Backend runs on 5000, Frontend on 3000
 - **Pagination**: 8 products per page
 - **Tax Rate**: 15% (configurable in calcPrices.js)
-- **Shipping**: Free over $100, else $10
-- **Currency**: US Dollar ($)
 - **Image Upload**: Multer handles file storage in `/uploads`
 - **Authentication**: JWT stored in HTTP-only cookies
 - **CORS**: Enabled for production deployment
