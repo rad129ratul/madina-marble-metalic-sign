@@ -1,0 +1,63 @@
+.digami-spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .digami-spinner {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    display: block;
+  }
+  
+  .digami-spinner-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+  }
+  
+  .spinner-ring {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 6px solid transparent;
+    border-top-color: #5B9BD5;
+    border-radius: 50%;
+    animation: digami-spin 1.2s linear infinite;
+  }
+  
+  .spinner-ring:nth-child(2) {
+    border-top-color: transparent;
+    border-right-color: #7544A8;
+    animation-delay: -0.3s;
+  }
+  
+  .spinner-ring:nth-child(3) {
+    border-top-color: transparent;
+    border-bottom-color: #E0483E;
+    animation-delay: -0.6s;
+  }
+  
+  .spinner-ring:nth-child(4) {
+    border-top-color: transparent;
+    border-left-color: #4CAF50;
+    animation-delay: -0.9s;
+  }
+  
+  @keyframes digami-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
