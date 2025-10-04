@@ -203,7 +203,27 @@ FRONTEND_URL=https://your-app.up.railway.app
 
 ## 📸 Screenshots
 
-*Coming soon - Add your actual screenshots*
+<div align="center">
+  <img src="screenshots/Homepage.png" width="800">
+</div>
+<div align="center">
+  <img src="screenshots/ProductDetails.png" width="800">
+</div>
+<div align="center">
+  <img src="screenshots/ShoppingCart.png" width="800">
+</div>
+<div align="center">
+  <img src="screenshots/UserProfile.png" width="800">
+</div>
+<div align="center">
+  <img src="screenshots/ProductList.png" width="800">
+</div>
+<div align="center">
+  <img src="screenshots/OrderList.png" width="800">
+</div>
+<div align="center">
+  <img src="screenshots/Loginscreen.png" width="800">
+</div>
 
 ## 🎨 Features Showcase
 
