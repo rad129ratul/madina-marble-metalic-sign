@@ -1,4 +1,12 @@
 import mongoose from 'mongoose';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const dns = require('dns');
+const servers = dns.getServers();
+if (servers.includes('127.0.0.1') || servers.length === 0) {
+  dns.setServers(['8.8.8.8', '8.8.4.4']);
+}
 
 const connectDB = async () => {
   try {
