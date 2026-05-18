@@ -77,7 +77,6 @@ npm run data:import
 ```
 
 This creates sample users and products:
-- Admin user: admin@email.com / 123456
 - Regular users + 6 demo products
 
 **5. Start development servers**
