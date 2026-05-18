@@ -1,12 +1,13 @@
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
+import { BASE_URL } from '../constants';
 
 const Product = ({ product }) => {
   return (
     <Card className='my-3 p-3 rounded'>
       <Link to={`/product/${product._id}`}>
-        <Card.Img src={product.image} variant='top' />
+        <Card.Img src={`${BASE_URL}${product.image}`} variant='top' />
       </Link>
 
       <Card.Body>
@@ -23,7 +24,7 @@ const Product = ({ product }) => {
           />
         </Card.Text>
 
-        <Card.Text as='h3'>{product.price}<strong style={{fontSize: '1.1em'}}>৳</strong></Card.Text>
+        <Card.Text as='h3'>{product.price}<strong style={{ fontSize: '1.1em' }}>৳</strong></Card.Text>
       </Card.Body>
     </Card>
   );

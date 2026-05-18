@@ -10,6 +10,7 @@ import Loader from '../components/Loader';
 import Message from '../components/Message';
 import Meta from '../components/Meta';
 import { addToCart } from '../slices/cartSlice';
+import { BASE_URL } from '../constants';
 
 const ProductScreen = () => {
   const { id: productId } = useParams();
@@ -79,7 +80,7 @@ const ProductScreen = () => {
           <Meta title={product.name} description={product.description} />
           <Row>
             <Col md={6}>
-              <Image src={product.image} alt={product.name} fluid />
+              <Image src={`${BASE_URL}${product.image}`} alt={product.name} fluid />
             </Col>
             <Col md={3}>
               <ListGroup variant='flush'>
@@ -89,7 +90,7 @@ const ProductScreen = () => {
                 <ListGroup.Item>
                   <Rating value={product.rating} text={`${product.numReviews} reviews`} />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: {product.price}<strong style={{fontSize: '1.1em'}}>৳</strong></ListGroup.Item>
+                <ListGroup.Item>Price: {product.price}<strong style={{ fontSize: '1.1em' }}>৳</strong></ListGroup.Item>
                 <ListGroup.Item>
                   Description: {product.description}
                 </ListGroup.Item>
@@ -102,7 +103,7 @@ const ProductScreen = () => {
                     <Row>
                       <Col>Price:</Col>
                       <Col>
-                        <strong>{product.price}<strong style={{fontSize: '1.1em'}}>৳</strong></strong>
+                        <strong>{product.price}<strong style={{ fontSize: '1.1em' }}>৳</strong></strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
