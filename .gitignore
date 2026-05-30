@@ -33,7 +33,6 @@ coverage/
 Thumbs.db
 
 # Uploads (optional - remove if you want to include uploaded images in git)
-uploads/
 !uploads/.gitkeep
 
 # IDE files
