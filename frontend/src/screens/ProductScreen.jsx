@@ -10,7 +10,6 @@ import Loader from '../components/Loader';
 import Message from '../components/Message';
 import Meta from '../components/Meta';
 import { addToCart } from '../slices/cartSlice';
-import { BASE_URL } from '../constants';
 
 const ProductScreen = () => {
   const { id: productId } = useParams();
@@ -80,7 +79,7 @@ const ProductScreen = () => {
           <Meta title={product.name} description={product.description} />
           <Row>
             <Col md={6}>
-              <Image src={`${BASE_URL}${product.image}`} alt={product.name} fluid />
+              <Image src={product.image} alt={product.name} fluid />
             </Col>
             <Col md={3}>
               <ListGroup variant='flush'>
