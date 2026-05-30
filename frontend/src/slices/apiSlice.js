@@ -3,15 +3,19 @@ import { BASE_URL } from '../constants';
 
 import { logout } from './authSlice';
 
+// const baseQuery = fetchBaseQuery({
+//     baseUrl: BASE_URL,
+//     prepareHeaders: (headers, { getState }) => {
+//         const token = getState().auth.userInfo?.token;
+//         if (token) {
+//             headers.set('authorization', `Bearer ${token}`);
+//         }
+//         return headers;
+//     },
+// });
 const baseQuery = fetchBaseQuery({
-    baseUrl: BASE_URL,
-    prepareHeaders: (headers, { getState }) => {
-        const token = getState().auth.userInfo?.token;
-        if (token) {
-            headers.set('authorization', `Bearer ${token}`);
-        }
-        return headers;
-    },
+  baseUrl: BASE_URL,
+  credentials: 'include',
 });
 
 async function baseQueryWithAuth(args, api, extra) {

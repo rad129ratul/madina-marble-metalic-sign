@@ -23,10 +23,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // CORS for production
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+//   next();
+// });
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', 'https://madina-marble-metalic-sign.vercel.app');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  if (req.method === 'OPTIONS') return res.sendStatus(200);
   next();
 });
 
@@ -46,10 +54,10 @@ app.use('/api/upload', uploadRoutes);
 // Production setup
 if (process.env.NODE_ENV === 'production') {
   const __dirname = path.resolve();
-  
+
   // Serve uploaded files
   app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-  
+
   // Serve static files from React build
   app.use(express.static(path.join(__dirname, 'frontend/build')));
 
@@ -61,7 +69,7 @@ if (process.env.NODE_ENV === 'production') {
   // Development setup
   const __dirname = path.resolve();
   app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-  
+
   app.get('/', (req, res) => {
     res.send('API is running....');
   });
